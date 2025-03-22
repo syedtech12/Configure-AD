@@ -47,5 +47,43 @@ This tutorial outlines the implementation of on-premises Active Directory within
   Create the Client VM (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in previous step:
 </p>
 <p>
-  <img src="" height="75%" width="100%" alt="vm windows"/>
+  <img src="https://i.imgur.com/hNxnYar.png" height="75%" width="100%" alt="vm windows"/>
+</p>
+<p>
+  Set Domain Controller’s NIC Private IP address to be static:
+</p>
+<p>
+  <img src="https://i.imgur.com/G5vNOfj.png" height="75%" width="100%" alt="static ip"/>
+</p>
+<br />
+<br />
+<h3 align="center">Ensure Connectivity between the client and Domain Controller</h3>
+<br />
+<p>
+  Login to Client-1 with Remote Desktop and ping DC-1’s private IP address with ping -t <ip address> (perpetual ping):
+</p>
+<p>
+  <img src="https://i.imgur.com/bnPM9tX.png" height="75%" width="100%" alt="perpetual ping"/>
+</p>
+<p>
+  Login to the Domain Controller and enable ICMPv4 in on the local windows firewall:
+</p>
+<p>
+  <img src="https://i.imgur.com/ZpPyEkt.png" height="75%" width="100%" alt="enable ICMPv4"/>
+</p>
+<p>
+  Check back at Client-1 to see the ping succeed:
+</p>
+<p>
+  <img src="https://i.imgur.com/8o3OfjY.png" height="75%" width="100%" alt="ping success"/>
+</p>
+<br />
+<br />
+<h3 align="center">Install Active Directory</h3>
+<br />
+<p>
+  Login to DC-1 and install Active Directory Domain Services:
+</p>
+<p>
+  <img src="https://i.imgur.com/A1V9XJ5.png" height="75%" width="100%" alt="active directory install"/>
 </p>
