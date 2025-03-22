@@ -93,15 +93,25 @@ This tutorial outlines the implementation of on-premises Active Directory within
   <img src="https://i.imgur.com/XYbVzqg.png" height="75%" width="100%" alt="domain controller promotion"/>
 </p>
 <p>
-Setup a new forest as (can be anything, just remember what it is) I set it up as syedsactivedirectory.com:
+Setup a new forest as (can be anything, just remember what it is) I set it up as syedsdomain.com:
 </p>
 <p>
-  <img src="https://i.imgur.com/NTcBfbt.png" height="75%" width="100%" alt="set new forest"/>
+  <img src="https://i.imgur.com/57KMHYX.png" height="75%" width="100%" alt="set new forest"/>
 </p>
 <p>
-  Restart and then log back into DC-1 as user: myadproject.com\labuser:
+  Restart and then log back into DC-1 as user: syedsdomain.com\syedlabuser:
 </p>
 <p>
-  <img src="" height="75%" width="100%" alt="fqdn login"/>
+  <img src="https://i.imgur.com/XbC0Ztx.png" height="75%" width="100%" alt="fqdn login"/>
 </p>
 <br />
+<br />
+<h3 align="center">Create an Admin and Normal User Account in AD</h3>
+<br />
+<p>
+  In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES” and another one called "_ADMINS":
+</p>
+<p>
+  <img src="" height="75%" width="100%" alt="organizational unit"/>
+  <img src="" height="75%" width="100%" alt="organizational unit"/>
+</p>
