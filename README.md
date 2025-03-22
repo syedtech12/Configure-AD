@@ -112,6 +112,34 @@ Setup a new forest as (can be anything, just remember what it is) I set it up as
   In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called “_EMPLOYEES” and another one called "_ADMINS":
 </p>
 <p>
-  <img src="" height="75%" width="100%" alt="organizational unit"/>
-  <img src="" height="75%" width="100%" alt="organizational unit"/>
+  <img src="https://i.imgur.com/JV5RReY.png" height="75%" width="100%" alt="organizational unit"/>
+  <img src="https://i.imgur.com/HweXzcs.png" height="75%" width="100%" alt="organizational unit"/>
+</p>
+<p>
+  Create a new employee named “Jane Doe” with the username of “jane_admin”:
+</p>
+<p>
+  <img src="https://i.imgur.com/ww4L3hR.png" height="75%" width="100%" alt="admin creation"/>
+</p>
+<p>
+  Add jane_admin to the “Domain Admins” Security Group:
+</p>
+<p>
+  <img src="https://i.imgur.com/84nfUKX.png" height="75%" width="100%" alt="security group"/>
+</p>
+<p>  
+  Log out/close the Remote Desktop connection to DC-1 and log back in as “myadproject.com\jane_admin”. Use jane_admin as your admin account from now on:
+</p>
+<p>
+  <img src="https://i.imgur.com/8tPdO6G.png" height="75%" width="100%" alt="admin login"/>
+</p>
+<br />
+<br />
+<h3 align="center">Join Client-1 to your domain (myadproject.com)</h3>
+<br />
+<p>
+  From the Azure Portal, set Client-1’s DNS settings to the DC’s Private IP address:
+</p>
+<p>
+  <img src="" height="75%" width="100%" alt="client dns settings"/>
 </p>
