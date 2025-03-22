@@ -141,5 +141,86 @@ Setup a new forest as (can be anything, just remember what it is) I set it up as
   From the Azure Portal, set Client-1’s DNS settings to the DC’s Private IP address:
 </p>
 <p>
-  <img src="" height="75%" width="100%" alt="client dns settings"/>
+    <img src="https://i.imgur.com/1KRsjI6.png" height="75%" width="100%" alt="client dns settings"/>
+</p>
+<p>
+  From the Azure Portal, restart Client-1.
+</p>
+<p>
+  Login to Client-1 (Remote Desktop) as the original local admin (labuser) and join it to the domain (computer will restart):
+</p>
+<p>
+  <img src="https://i.imgur.com/uTUlKW9.png" height="75%" width="100%" alt="domain joining"/>
+</p>
+<p>
+  Login to the Domain Controller (Remote Desktop) and verify Client-1 shows up in Active Directory Users and Computers (ADUC) inside the “Computers” container on the root of the domain.
+</p>
+<p>
+  Create a new OU named “_CLIENTS” and drag Client-1 into there:
+</p>
+<p>
+  <img src="https://i.imgur.com/dSs8fIP.png" height="75%" width="100%" alt="active directory client verification"/>
+</p>
+<br />
+<br />
+<h3 align="center">Setup Remote Desktop for non-administrative users on Client-1</h3>
+<br />
+<p>
+  Log into Client-1 as syedsdomain.com\jane_admin and open system properties.
+</p>
+<p>
+  Click “Remote Desktop”.
+</p>
+<p>
+  Allow “domain users” access to remote desktop.
+</p>
+<p>
+  You can now log into Client-1 as a normal, non-administrative user now.
+</p>
+<p>
+  Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab):
+</p>
+<p>
+  <img src="https://i.imgur.com/RuGjnI4.png" height="75%" width="100%" alt="remote desktop setup"/>
+</p>
+<br />
+<br />
+<h3 align="center">Create a bunch of additional users and attempt to log into client-1 with one of the users</h3>
+<br />
+<p>
+  Login to DC-1 as jane_admin
+</p>
+<p>
+  Open PowerShell_ise as an administrator.
+</p> 
+<p>  
+  Create a new File and paste the contents of this script (https://github.com/Xinloiazn/configure-ad/blob/main/adscript.ps1) into it:
+
+<p>
+  Run the script and observe the accounts being created:
+</p>
+<p>
+  Run the script and observe the accounts being created:
+</p>
+<p>
+  <img src="https://i.imgur.com/ca6d2hc.png" height="75%" width="100%" alt="observe create users script"/>
+</p>
+<p>
+  When finished, open ADUC and observe the accounts in the appropriate OU and attempt to log into Client-1 with one of the accounts (take note of the password in the script):
+</p>
+<p>
+  <img src="https://i.imgur.com/AzklM1H.png" height="75%" width="100%" alt="employee user accounts"/>
+  <img src="https://i.imgur.com/D6GbDTe.png" height="75%" width="100%" alt="employee user selection"/>
+  <img src="https://i.imgur.com/Wnez53w.png" height="75%" width="100%" alt="employee user login"/>
+</p>
+<br />
+<br />
+<p>
+  I hope this tutorial helped you learn a little bit about network security protocols and observe traffic between virtual machines. This can be easily done on a PC or a Mac. Mac would just have an extra step to download the Remote Desktop App.
+</p>
+<p>
+  Now that we're done, DON'T FORGET TO CLEAN UP YOUR AZURE ENVIRONMENT so that you don't incur unnecessary charges.
+</p>
+<p>
+  Close your Remote Desktop connection, delete the Resource Group(s) created at the beginning of this tutorial, and verify Resource Group deletion.
 </p>
